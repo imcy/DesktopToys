@@ -140,7 +140,6 @@ void CDesktopToysDlg::OnLButtonDown(UINT nFlags, CPoint point)
 void CDesktopToysDlg::OnLButtonUp(UINT nFlags, CPoint point)
 {
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
-	AfxMessageBox(_T("鼠标左键抬起消息"));
 	m_pGame->OnLButtonUp(nFlags, point);
 	CDialogEx::OnLButtonUp(nFlags, point);
 }
@@ -157,7 +156,6 @@ void CDesktopToysDlg::OnRButtonDown(UINT nFlags, CPoint point)
 void CDesktopToysDlg::OnRButtonUp(UINT nFlags, CPoint point)
 {
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
-	AfxMessageBox(_T("鼠标右键抬起消息"));
 	m_pGame->OnRButtonUp(nFlags, point);
 	CDialogEx::OnRButtonUp(nFlags, point);
 }

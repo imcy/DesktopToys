@@ -5,7 +5,11 @@
 #include "IDrawable.h"
 #include "IMouseAction.h"
 #include "MenuItem.h"
-
+#include "Shooter.h"
+#include "Shooter0.h"
+#include "Shooter1.h"
+#include "Shooter2.h"
+#include "Shooter3.h"
 
 class CDMenu :
 	public IDrawable,public IMouseAction

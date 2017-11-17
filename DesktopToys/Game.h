@@ -32,6 +32,7 @@ public:
 
 	// 按下 ESC 键时的处理: 返回FALSE 不处理，则由父窗口处理
 	BOOL OnESC();
+	void SetStatusNormal(std::shared_ptr<CShooter> pTool, BOOL bCursor = FALSE);
 	// 增加一个 破坏物
 	void Append(std::shared_ptr<IMark> pMark)
 	{

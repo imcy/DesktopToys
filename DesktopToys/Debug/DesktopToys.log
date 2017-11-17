@@ -1,6 +1,23 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\sal.h(2866): warning RC4005: '__useHeader' : redefinition
-  
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.10.25017\include\sal.h(2876): warning RC4005: '__on_failure' : redefinition
-  
+﻿  stdafx.cpp
+  Shooter3Mark.cpp
+  Shooter3.cpp
+  Shooter2Mark.cpp
+  Shooter2.cpp
+  Shooter1Mark.cpp
+  Shooter1.cpp
+  Shooter0Mark.cpp
+  Shooter0.cpp
+  Shooter.cpp
+  ScreenTools.cpp
+  MenuItem.cpp
+  IMouseAction.cpp
+  IMark.cpp
+  IDrawable.cpp
+  GameTimer.cpp
+  Game.cpp
+  DMenu.cpp
+  DesktopToysDlg.cpp
+  DesktopToys.cpp
+  正在生成代码...
   DesktopToys.vcxproj -> F:\c++\DesktopToys\Debug\DesktopToys.exe
   DesktopToys.vcxproj -> F:\c++\DesktopToys\Debug\DesktopToys.pdb (Partial PDB)

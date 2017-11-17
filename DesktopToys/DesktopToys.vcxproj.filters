@@ -63,6 +63,30 @@
     <ClInclude Include="MenuItem.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Shooter0Mark.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter0.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter1Mark.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter2Mark.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter3Mark.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shooter3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesktopToys.cpp">
@@ -99,6 +123,30 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MenuItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter0Mark.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter0.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter1Mark.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter2Mark.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter3Mark.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shooter3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

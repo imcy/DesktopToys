@@ -199,6 +199,14 @@
     <ClInclude Include="ScopeGuard.h" />
     <ClInclude Include="ScreenTools.h" />
     <ClInclude Include="Shooter.h" />
+    <ClInclude Include="Shooter0.h" />
+    <ClInclude Include="Shooter0Mark.h" />
+    <ClInclude Include="Shooter1.h" />
+    <ClInclude Include="Shooter1Mark.h" />
+    <ClInclude Include="Shooter2.h" />
+    <ClInclude Include="Shooter2Mark.h" />
+    <ClInclude Include="Shooter3.h" />
+    <ClInclude Include="Shooter3Mark.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -214,6 +222,14 @@
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="ScreenTools.cpp" />
     <ClCompile Include="Shooter.cpp" />
+    <ClCompile Include="Shooter0.cpp" />
+    <ClCompile Include="Shooter0Mark.cpp" />
+    <ClCompile Include="Shooter1.cpp" />
+    <ClCompile Include="Shooter1Mark.cpp" />
+    <ClCompile Include="Shooter2.cpp" />
+    <ClCompile Include="Shooter2Mark.cpp" />
+    <ClCompile Include="Shooter3.cpp" />
+    <ClCompile Include="Shooter3Mark.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

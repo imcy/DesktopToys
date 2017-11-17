@@ -40,7 +40,7 @@ void CGame::OnLButtonDown(UINT nFlags, CPoint point)
 		break;
 	}
 	case CGame::EGameStatusNormal: {
-		// 游戏 阶段
+		m_pTool->OnLButtonDown(nFlags, point);
 		break;
 	}
 	default: {
@@ -59,7 +59,7 @@ void CGame::OnLButtonUp(UINT nFlags, CPoint point)
 		break;
 	}
 	case CGame::EGameStatusNormal: {
-		// 游戏 阶段
+		m_pTool->OnLButtonUp(nFlags, point);
 		break;
 	}
 	default: {
@@ -82,7 +82,7 @@ void CGame::OnRButtonDown(UINT nFlags, CPoint point)
 		}
 	}
 	case CGame::EGameStatusNormal: {
-		// 游戏 阶段
+		m_pTool->OnRButtonDown(nFlags,point);
 		break;
 	}
 	default: {
@@ -102,7 +102,7 @@ void CGame::OnRButtonUp(UINT nFlags, CPoint point)
 		}
 	}
 	case CGame::EGameStatusNormal: {
-		// 游戏 阶段
+		m_pTool->OnRButtonUp(nFlags, point);
 		break;
 	}
 	default: {
@@ -120,11 +120,11 @@ void CGame::OnMouseMove(UINT nFlags, CPoint point)
 {
 	switch (m_eStatus) {
 	case CGame::EGameStatusSelect: {
-		// 菜单 阶段 : 交给 m_menu 菜单处理
 		break;
 	}
 	case CGame::EGameStatusNormal: {
 		// 游戏 阶段
+		m_pTool->OnMouseMove(nFlags,point);
 		break;
 	}
 	default: {
@@ -167,6 +167,28 @@ BOOL CGame::OnESC()
 	return FALSE;
 }
 
+void CGame::SetStatusNormal(std::shared_ptr<CShooter> pTool, BOOL bCursor)
+{
+	// 设置使用的工具
+	m_pTool = pTool;
+	// 设置游戏状态
+	m_eStatus = EGameStatusNormal;
+	// 隐藏鼠标
+	if (!bCursor) {
+		while (true) {
+			int i = ShowCursor(FALSE);
+			TRACE("隐藏光标 %d \r\n", i);
+			if (i < 0) {
+				break;
+			}
+		}
+	}
+	else {
+		int i = ShowCursor(bCursor);
+		TRACE("显示光标 %d \n", i);
+	}
+}
+
 void CGame::Draw()
 {
 	HDC hdc = ::GetDC(m_hWnd);
@@ -191,7 +213,28 @@ void CGame::Draw()
 	gh.Clear(clr);
 	gh.ResetClip();
 
+	// 合并背景图和不动的素
+	if (!m_vMarks.empty()) {
+		Graphics gh(m_imgBk);
+		for (auto ptr : m_vMarks) {
+			// 不再变化的对象，直接合并入背景图片中，用来提高绘图效率
+			if (!ptr->IsChanging()) {
+				ptr->Draw(gh);
+			}
+		}
+		// 删除不再变化的的对象
+		m_vMarks.erase(std::remove_if(m_vMarks.begin(),
+			m_vMarks.end(),
+			[](auto & lhs)->bool {return !lhs->IsChanging(); })
+			, m_vMarks.end());
+	}
+
 	gh.DrawImage(m_imgBk, m_x, m_y, m_width, m_height);			// 画背景图片
+	//画出继续变动的对象：不变动的已绘入背景图片中
+	for (auto &ptr : m_vMarks) {
+		ptr->Draw(gh);
+	}
+
 																// 根据游戏当前阶段，画不同的东西
 	{
 		switch (m_eStatus) {

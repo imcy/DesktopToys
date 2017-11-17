@@ -41,6 +41,7 @@
 #include <string>
 #include <assert.h>
 #include "ScreenTools.h"
+#include "GameTimer.h"
 
 using namespace std;
 #include <gdiplus.h>  //ÒıÈëGDIPlus¿â

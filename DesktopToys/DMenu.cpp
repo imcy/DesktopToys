@@ -178,7 +178,8 @@ bool CDMenu::OnLButtonDown(UINT nFlags, CPoint point)
 	if (m_item0->OnLButtonDown(nFlags, point)) {
 		// 结束动画
 		EndAnimate();
-		AfxMessageBox(_T("设置 游戏进入 游戏阶段，并设置当前工具为 CShooter0"));
+		//进入游戏进入游戏阶段，并设置当前工具为CShooter0
+		g_game->SetStatusNormal(make_shared<CShooter0>(), TRUE);
 		return true;
 	}
 	if (m_item1->OnLButtonDown(nFlags, point)) {
@@ -188,19 +189,19 @@ bool CDMenu::OnLButtonDown(UINT nFlags, CPoint point)
 		// 获得屏幕高度
 		RECT rc;
 		GetClientRect(m_hWnd, &rc);
-		AfxMessageBox(_T("设置 游戏进入 游戏阶段，并设置当前工具为 CShooter1"));
+		g_game->SetStatusNormal(make_shared<CShooter1>(static_cast<int>(rc.bottom - rc.top)), FALSE); 
 		return true;
 	}
 	if (m_item2->OnLButtonDown(nFlags, point)) {
 		// 结束动画
 		EndAnimate();
-		AfxMessageBox(_T("设置 游戏进入 游戏阶段，并设置当前工具为 CShooter2"));
+		g_game->SetStatusNormal(make_shared<CShooter2>(),TRUE);
 		return true;
 	}
 	if (m_item3->OnLButtonDown(nFlags, point)) {
 		// 结束动画
 		EndAnimate();
-		AfxMessageBox(_T("设置 游戏进入 游戏阶段，并设置当前工具为 CShooter3"));
+		g_game->SetStatusNormal(make_shared<CShooter3>(), FALSE);
 		return true;
 	}
 
